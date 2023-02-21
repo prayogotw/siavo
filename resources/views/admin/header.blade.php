@@ -2,13 +2,13 @@
 $notifications = auth()->user()->notifications()->where('read_at', NULL)->get();
 
 ?>
-<header class="header twitter-bg">
+<header class="header white-bg">
     <div class="toggle-nav">
       <div class="icon-reorder tooltips" data-original-title="Toggle Navigation" data-placement="bottom"><i class="icon_menu"></i></div>
     </div>
 
     <!--logo start-->
-    <a href="/dashboard/home" class="logo" style="color:  #fff;">SIAVO</span></a>
+    <a href="/dashboard/home" class="logo" style="color:  #fff;"><img src="{{asset('/images/siavo.png')}}" width="100" height="50"></span></a>
     <!--logo end-->
 
     <div class="nav search-row" id="top_menu">
@@ -52,6 +52,12 @@ $notifications = auth()->user()->notifications()->where('read_at', NULL)->get();
             <div class="log-arrow-up"></div>
             <li class="eborder-top">
               <a href="{{route('admin.profile')}}"><i class="icon_profile"></i> My Profile</a>
+              <form id="logout-form" action="{{ route('logout') }}" method="POST">
+                @csrf
+                <button type="submit" class="btn btn-outline-danger">
+                    <i class="fa fa-sign-out"> Logout</i></button>
+              </form>
+              {{-- <a href="{{ route('logout') }}"><i class="fa fa-sign-out"></i> Logout </a> --}}
             </li>
 
           </ul>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 21, 2022 at 04:39 PM
+-- Generation Time: Dec 27, 2022 at 06:03 AM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `stsdb`
+-- Database: `siavo`
 --
 
 -- --------------------------------------------------------
@@ -48,7 +48,8 @@ INSERT INTO `categories` (`id`, `title`, `desc`, `image`, `user_id`, `is_deleted
 (3, 'Praktik Keterampilan Mengajar', '<p>Praktik Keterampilan Mengajar (PKM) merupakan&nbsp;<strong>salah satu mata kuliah wajib bagi mahasiswa kependidikan&nbsp;pada Lembaga Pendidikan Tenaga Kependidikan</strong>&nbsp;(LPTK). Mata kuliah ini berbentuk mata kuliah praktik yang berbobot 2 SKS dan dilakukan sebagai prasyarat untuk mengikuti PPL- PPG.</p>', '1667724466microteachingpkm.jpg', 1, 0, '2022-11-06 01:47:46', '2022-11-06 01:47:46'),
 (4, 'Seminar Proposal', '<p>Seminar Proposal atau sering dikenal sebagai sebutan Sempro adalah bagian dari tahapan lanjutan untuk mempresentasikan rencana skripsi yang akan mahasiswa kerjakan. Pada seminar ini, penguji dan dosen akan diundang untuk mendengarkan mahasiswa dalam menjelaskan penelitian yang akan dikerjakan. Dan dosen tersebut akan memberikan masukan sehingga bisa membantu mahasiswa dalam perihal metode penelitiannya. Tujuan dari Sempro, sebagaimana dilansir laman ldeo.columbia.edu, adalah mengidentifikasi topik penelitian, menemukan mentor penelitian, merumuskan hipotesis, memahami latar belakang penelitian, mengembangkan atau menyesuaikan metode yang sesuai, dan meringkas keadaan proyek sebagai proposal. Setelah proposal penelitian ditinjau, mahasiswa harus mendiskusikan saran yang dibuat penguji dengan supervisor atau dosen pembimbing.</p>', '1667725585seminarprop.jpg', 1, 0, '2022-11-06 02:03:18', '2022-11-06 02:06:25'),
 (5, 'Skripsi', '<p>Skripsi adalah istilah yang digunakan di Indonesia untuk mengilustrasikan suatu karya tulis ilmiah berupa paparan tulisan hasil penelitian sarjana S1 yang membahas suatu permasalahan/fenomena dalam bidang ilmu tertentu dengan menggunakan kaidah-kaidah yang berlaku.</p>', '1667725687skripsi.jpg', 1, 0, '2022-11-06 02:08:08', '2022-11-06 02:08:08'),
-(6, 'Wisuda', '<p>Wisuda adalah upacara peneguhan atau pelantikan bagi seseorang yang telah menempuh pendidikan. Di kalangan akademik, wisuda merupakan penanda kelulusan mahasiswa yang telah menempuh masa belajar pada suatu universitas.</p>', '1667725818wisuda.jpg', 1, 0, '2022-11-06 02:08:15', '2022-11-06 02:10:18');
+(6, 'Wisuda', '<p>Wisuda adalah upacara peneguhan atau pelantikan bagi seseorang yang telah menempuh pendidikan. Di kalangan akademik, wisuda merupakan penanda kelulusan mahasiswa yang telah menempuh masa belajar pada suatu universitas.</p>', '1667725818wisuda.jpg', 1, 0, '2022-11-06 02:08:15', '2022-11-06 02:10:18'),
+(8, 'Mahasiswa Baru', '<p><strong>Lorem Ipsum</strong>&nbsp;is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&#39;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>', '1671516609120821054624-611511181a772lucifer-season-6-trailer-tom-ellis-lauren-german-resized-.jpg', 1, 0, '2022-12-19 23:10:09', '2022-12-19 23:10:09');
 
 -- --------------------------------------------------------
 
@@ -70,6 +71,14 @@ CREATE TABLE `discussions` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data for table `discussions`
+--
+
+INSERT INTO `discussions` (`id`, `title`, `desc`, `forum_id`, `is_deleted`, `image`, `views`, `notify`, `user_id`, `created_at`, `updated_at`) VALUES
+(1, 'safdasf', 'asfdadasd', 2, 0, NULL, 1, 1, 1, '2022-11-28 21:02:08', '2022-11-28 21:02:33'),
+(2, 'Seputar Maba UNJ 2023', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', 3, 0, NULL, 6, 1, 2, '2022-12-19 23:12:07', '2022-12-24 22:48:35');
+
 -- --------------------------------------------------------
 
 --
@@ -87,6 +96,14 @@ CREATE TABLE `discussion_replies` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `discussion_replies`
+--
+
+INSERT INTO `discussion_replies` (`id`, `desc`, `discussion_id`, `is_deleted`, `likes`, `dislikes`, `user_id`, `created_at`, `updated_at`) VALUES
+(1, 'asdfghjkl', 1, 0, 0, 0, 2, '2022-12-19 21:45:59', '2022-12-19 21:45:59'),
+(2, 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', 2, 0, 1, 0, 1, '2022-12-19 23:13:26', '2022-12-19 23:14:37');
 
 -- --------------------------------------------------------
 
@@ -128,7 +145,8 @@ CREATE TABLE `forums` (
 
 INSERT INTO `forums` (`id`, `title`, `desc`, `topics`, `user_id`, `category_id`, `is_deleted`, `created_at`, `updated_at`) VALUES
 (1, 'Forum Peminatan/Konsentrasi Studi', '<p>Berikut ini adalah Forum Peminatan atau Konsentrasi Studi di Universitas Negeri Jakarta. Forum ini membahas&nbsp;Peminatan di berbagai Program Studi yang ada di Universitas Negeri Jakarta</p>', 0, 1, 1, 0, '2022-11-06 01:49:53', '2022-11-06 05:49:23'),
-(2, 'Praktik Kerja Lapangan', '<p>Berikut ini adalah Forum Praktik Kerja Lapangan di Universitas Negeri Jakarta. Forum ini membahas proses administrasi dan pelaksanaan Praktik Kerja Lapangan.</p>', 0, 1, 2, 0, '2022-11-06 01:54:50', '2022-11-06 05:47:41');
+(2, 'Praktik Kerja Lapangan', '<p>Berikut ini adalah Forum Praktik Kerja Lapangan di Universitas Negeri Jakarta. Forum ini membahas proses administrasi dan pelaksanaan Praktik Kerja Lapangan.</p>', 0, 1, 2, 0, '2022-11-06 01:54:50', '2022-11-06 05:47:41'),
+(3, 'Maba UNJ 2023', '<p><strong>Lorem Ipsum</strong>&nbsp;is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&#39;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>', 0, 1, 8, 0, '2022-12-19 23:10:41', '2022-12-19 23:10:41');
 
 -- --------------------------------------------------------
 
@@ -184,6 +202,17 @@ CREATE TABLE `notifications` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `notifications`
+--
+
+INSERT INTO `notifications` (`id`, `type`, `notifiable_type`, `notifiable_id`, `data`, `read_at`, `created_at`, `updated_at`) VALUES
+('288e6f68-9d2c-4e05-8fda-006716898213', 'App\\Notifications\\NewReply', 'App\\Models\\User', 1, '{\"name\":\"Prayogo Tuhu Winengku\",\"email\":\"prayogotuhuwinengku@gmail.com\",\"message\":\"Prayogo Tuhu Winengku replied to the topic safdasf\",\"type\":3}', NULL, '2022-12-19 21:45:59', '2022-12-19 21:45:59'),
+('50b75049-de4b-40af-aa9e-7dc7b79e90ed', 'App\\Notifications\\NewCategory', 'App\\Models\\User', 1, '{\"name\":\"Administrator\",\"email\":\"administrator@gmail.com\",\"message\":\"Administrator Created a new Category: Mahasiswa Baru\",\"type\":4}', NULL, '2022-12-19 23:10:09', '2022-12-19 23:10:09'),
+('87da840a-d530-46cf-84fc-73fd8f40ed12', 'App\\Notifications\\NewTopic', 'App\\Models\\User', 1, '{\"name\":\"Prayogo Tuhu Winengku\",\"email\":\"prayogotuhuwinengku@gmail.com\",\"message\":\"New Discussion started: Seputar Maba UNJ 2023\",\"type\":2}', NULL, '2022-12-19 23:12:07', '2022-12-19 23:12:07'),
+('991e1937-d14c-4f81-85c5-85c7179f59b6', 'App\\Notifications\\NewTopic', 'App\\Models\\User', 1, '{\"name\":\"Administrator\",\"email\":\"administrator@gmail.com\",\"message\":\"New Discussion started: safdasf\",\"type\":2}', NULL, '2022-11-28 21:02:08', '2022-11-28 21:02:08'),
+('ce0127e3-d1ea-4fb7-bdeb-5e06c2039b2d', 'App\\Notifications\\NewReply', 'App\\Models\\User', 1, '{\"name\":\"Administrator\",\"email\":\"administrator@gmail.com\",\"message\":\"Administrator replied to the topic Seputar Maba UNJ 2023\",\"type\":3}', NULL, '2022-12-19 23:13:26', '2022-12-19 23:13:26');
 
 -- --------------------------------------------------------
 
@@ -349,6 +378,13 @@ CREATE TABLE `reply_likes` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data for table `reply_likes`
+--
+
+INSERT INTO `reply_likes` (`id`, `reply_id`, `user_id`, `created_at`, `updated_at`) VALUES
+(1, 2, 2, '2022-12-19 23:14:37', '2022-12-19 23:14:37');
+
 -- --------------------------------------------------------
 
 --
@@ -367,7 +403,9 @@ CREATE TABLE `settings` (
 --
 
 INSERT INTO `settings` (`id`, `forum_name`, `created_at`, `updated_at`) VALUES
-(1, 'SIAVO', '2022-11-06 06:23:43', '2022-11-06 06:23:43');
+(1, 'SIAVO', '2022-11-06 06:23:43', '2022-11-06 06:23:43'),
+(2, 'SIAVO - Sistem Informasi Advokasi', '2022-12-19 08:26:42', '2022-12-19 08:26:42'),
+(3, 'SIAVO', '2022-12-19 23:08:38', '2022-12-19 23:08:38');
 
 -- --------------------------------------------------------
 
@@ -419,8 +457,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `phone`, `address`, `is_admin`, `country`, `image`, `proffesion`, `bio`, `skills`, `education`, `is_deleted`, `is_verified`, `is_banned`, `rank`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Administrator', NULL, NULL, 1, NULL, '1667724341administrator.png', NULL, NULL, NULL, NULL, 0, 0, 0, 0, 'administrator@gmail.com', NULL, '$2y$10$07o/kLOsqSdjOYwOwTT8pO9x3vUr0M2SwONqHpSHwt5yKyN0R.KTe', NULL, '2022-11-06 01:45:17', '2022-11-06 01:45:41'),
-(2, 'Prayogo Tuhu Winengku', NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, 0, 0, 0, 0, 'prayogotuhuwinengku@gmail.com', NULL, '$2y$10$LsZ9ANVLqJuD5UD0PsAhi.82qktyaJNq8UJpdnMXobUMwVdNciWI.', NULL, '2022-11-06 05:44:18', '2022-11-06 05:44:18');
+(1, 'Administrator', NULL, NULL, 1, NULL, '1667724341administrator.png', NULL, NULL, NULL, NULL, 0, 0, 0, 30, 'administrator@gmail.com', NULL, '$2y$10$07o/kLOsqSdjOYwOwTT8pO9x3vUr0M2SwONqHpSHwt5yKyN0R.KTe', NULL, '2022-11-06 01:45:17', '2022-12-19 23:14:37'),
+(2, 'Prayogo Tuhu Winengku', NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, 0, 0, 0, 20, 'prayogotuhuwinengku@gmail.com', NULL, '$2y$10$LsZ9ANVLqJuD5UD0PsAhi.82qktyaJNq8UJpdnMXobUMwVdNciWI.', NULL, '2022-11-06 05:44:18', '2022-12-19 23:12:07');
 
 --
 -- Indexes for dumped tables
@@ -582,19 +620,19 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `discussions`
 --
 ALTER TABLE `discussions`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `discussion_replies`
 --
 ALTER TABLE `discussion_replies`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`
@@ -606,7 +644,7 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT for table `forums`
 --
 ALTER TABLE `forums`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `migrations`
@@ -672,13 +710,13 @@ ALTER TABLE `reply_dislikes`
 -- AUTO_INCREMENT for table `reply_likes`
 --
 ALTER TABLE `reply_likes`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `settings`
 --
 ALTER TABLE `settings`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `tags`

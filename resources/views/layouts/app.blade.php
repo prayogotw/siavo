@@ -41,7 +41,7 @@ $settings = Setting::latest()->first();
 <body>
     <div class="container-fluid">
         <!-- First section -->
-        <nav class="navbar navbar-dark bg-dark">
+        <nav class="navbar navbar-white bg-white">
             <div class="container">
               <h1>
                 @if ($settings->forum_name)
@@ -67,7 +67,7 @@ $settings = Setting::latest()->first();
 
             @auth
             @if (auth()->user()->is_admin)
-            <a class="nav-item nav-link text-white btn btn-outline-success" href="/dashboard/home">Admin Panel</a>
+            <a class="nav-item nav-link text-black btn btn-outline-success" href="/dashboard/home">Admin Panel</a>
             @endif
 
             <form id="logout-form" action="{{ route('logout') }}" method="POST">
@@ -132,7 +132,7 @@ $settings = Setting::latest()->first();
     </div> --}}
 
     <div class="container-fluid">
-        <footer class="small bg-dark text-white">
+        <footer class="small bg-white text-dark">
           <div class="container py-4">
             <ul class="list-inline mb-0 text-center">
               <li class="list-inline-item">

@@ -73,6 +73,18 @@
                             <span>Dashboard</span>
                         </a>
             </li>
+            <li>
+                <a class="" href="/home">
+                              <i class="fas fa-id-card"></i>
+                              <span>Home</span>
+                          </a>
+              </li>
+              <li>
+                <a class="" href="/">
+                              <i class="fas fa-comments"></i>
+                              <span>Forum Chat</span>
+                          </a>
+              </li>
             {{-- <li class="sub-menu">
               <a href="javascript:;" class="">
                             <i class="fa fa-edit"></i>
